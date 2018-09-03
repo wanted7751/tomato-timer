@@ -18,7 +18,10 @@ function formatTime(time) {
 class Timer extends Component {
     componentWillReceiveProps(nextProps) {
         const currentProps = this.props;
+        //console.log(`The current isPlaying is ${currentProps.isPlaying} and the new isPlaying is ${nextProps.isPlaying}`)
+
         if (!currentProps.isPlaying && nextProps.isPlaying) {
+            // start the interval
             const timerInterval = setInterval(() => {
                 currentProps.addSecond();
             }, 1000);
@@ -30,12 +33,14 @@ class Timer extends Component {
         }
     }
     render() {
+        console.log(this.props);
         const {
             isPlaying,
             elapsedTime,
             timerDuration,
             startTimer,
-            restartTimer
+            restartTimer,
+            addSecond
         } = this.props;
         return (
             <View style={styles.container}>
