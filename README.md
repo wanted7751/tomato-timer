@@ -1,2 +1,2 @@
 # tomato-timer
-tomato-timer/clone
+tomato-timer/cloness
